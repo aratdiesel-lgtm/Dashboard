@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth motion-reduce:scroll-auto">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b0c10">
+  <meta name="description" content="Folio: resultados de campañas, ventas y comisiones de un negocio de creación de contenido. Dashboard con datos demostrativos.">
+  <title>Folio · Tu impacto, en números</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;450;500;550;600;650;700;750;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./dist/styles.css">
+</head>
+<body class="bg-canvas font-sans text-[#f1f1f3] antialiased selection:bg-lavender/30 [&_button]:cursor-pointer [&_summary]:cursor-pointer [&_a]:transition-colors [&_button]:transition-colors [&_:focus-visible]:outline-2 [&_:focus-visible]:outline-offset-4 [&_:focus-visible]:outline-lavender">
+  <svg xmlns="http://www.w3.org/2000/svg" class="hidden" aria-hidden="true">
+    <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24"><path d="M3 3v18h18M7 14l4-4 4 3 6-8"/></symbol>
+    <symbol id="i-bag" viewBox="0 0 24 24"><path d="M6 7h12l3 14H3L6 7Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></symbol>
+    <symbol id="i-megaphone" viewBox="0 0 24 24"><path d="m3 11 18-5v12L3 14v-3ZM7 15l1 6h4l-2-5M21 9v6"/></symbol>
+    <symbol id="i-wallet" viewBox="0 0 24 24"><path d="M20 8V5H6a3 3 0 0 0 0 6h15v8H6a3 3 0 0 1-3-3V8"/><path d="M21 12h-5v4h5M17 14h.01"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M7 17 17 7M7 7h10v10"/></symbol>
+    <symbol id="i-down" viewBox="0 0 24 24"><path d="m7 10 5 5 5-5"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M5 16v5h14v-5"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M16 3v4M8 3v4M3 11h18"/></symbol>
+    <symbol id="i-bell" viewBox="0 0 24 24"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"/></symbol>
+    <symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 2-3 4M12 17h.01"/></symbol>
+    <symbol id="i-link" viewBox="0 0 24 24"><path d="m10 13 4-4M8 16l-2 2a4 4 0 0 1-6-6l5-5a4 4 0 0 1 6 0m2 1 2-2a4 4 0 0 1 6 6l-5 5a4 4 0 0 1-6 0" transform="translate(1 0)"/></symbol>
+    <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></symbol>
+    <symbol id="i-tiktok" viewBox="0 0 24 24"><path d="M14 3v12a4 4 0 1 1-4-4M14 3c1 4 3 5 7 5"/></symbol>
+    <symbol id="i-youtube" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="m10 9 6 3-6 3V9Z"/></symbol>
+    <symbol id="i-sparkles" viewBox="0 0 24 24"><path d="m12 3 2.6 6.4L21 12l-6.4 2.6L12 21l-2.6-6.4L3 12l6.4-2.6L12 3ZM20 2v4m-2-2h4"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4" ry="9"/><path d="M3 12h18"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+    <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></symbol>
+  </svg>
+  <a href="#contenido" class="fixed top-3 left-3 z-50 -translate-y-24 rounded-md bg-lavender px-4 py-3 text-sm font-bold text-canvas focus:translate-y-0">Saltar al contenido</a>
+
+  <aside class="fixed inset-y-0 left-0 z-30 hidden w-56 flex-col border-r border-line bg-[#0e0f13] lg:flex">
+    <a href="#resumen" aria-label="Folio, inicio" class="flex h-24 items-center gap-2.5 px-7">
+      <span class="grid size-8 grid-cols-2 gap-0.5" aria-hidden="true"><span class="rounded-tl-lg bg-lavender"></span><span class="rounded-tr-lg bg-lavender/55"></span><span class="rounded-bl-lg bg-lavender/55"></span><span class="rounded-br-lg bg-lavender"></span></span>
+      <span class="text-[29px] font-extrabold">folio<span class="text-lavender">.</span></span>
+    </a>
+    <div class="mx-4 flex items-center gap-3 rounded-lg border border-line bg-panel px-3 py-3">
+      <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=80&h=80&fit=crop&crop=faces&auto=format" alt="" width="34" height="34" class="size-9 rounded-full object-cover">
+      <div class="min-w-0"><p class="text-xs font-bold">El espacio de Lucía</p><p class="mt-0.5 text-[10px] text-muted">Creator Workspace</p></div>
+      <span class="ml-auto size-1.5 shrink-0 rounded-full bg-mint" aria-label="Espacio activo"></span>
+    </div>
+    <p class="px-7 pt-8 pb-3 text-[10px] font-semibold tracking-[0.12em] text-muted">WORKSPACE</p>
+    <nav aria-label="Navegación principal" class="space-y-1 px-4 text-xs">
+      <a href="#resumen" aria-current="page" class="flex items-center gap-3 rounded-md border border-lavender/15 bg-lavender/10 px-3 py-3 font-semibold text-lavender"><svg class="size-4" fill="none" stroke="currentColor" stroke-width="1.7"><use href="#i-grid"/></svg>Vista general<span class="ml-auto size-1 rounded-full bg-lavender"></span></a>
+      <a href="#rendimiento" class="flex items-center gap-3 rounded-md px-3 py-3 text-muted hover:bg-surface hover:text-white"><svg class="size-4" fill="none" stroke="currentColor" stroke-width="1.7"><use href="#i-chart"/></svg>Analítica</a>
+      <a href="#campanas" class="flex items-center gap-3 rounded-md px-3 py-3 text-muted hover:bg-surface hover:text-white"><svg class="size-4" fill="none" stroke="currentColor" stroke-width="1.7"><use href="#i-megaphone"/></svg>Campañas<span class="ml-auto rounded bg-surface px-1.5 py-0.5 text-[10px] text-white">3</span></a>
+      <a href="#productos" class="flex items-center gap-3 rounded-md px-3 py-3 text-muted hover:bg-surface hover:text-white"><svg class="size-4" fill="none" stroke="currentColor" stroke-width="1.7"><use href="#i-bag"/></svg>Productos</a>
+      <a href="#comisiones" class="flex items-center gap-3 rounded-md px-3 py-3 text-muted hover:bg-surface hover:text-white"><svg class="size-4" fill="none" stroke="currentColor" stroke-width="1.7"><use href="#i-wallet"/></svg>Comisiones</a>
+    </nav>
+    <p class="px-7 pt-8 pb-3 text-[10px] font-semibold tracking-[0.12em] text-muted">TUS CANALES</p>
+    <nav aria-label="Plataformas" class="space-y-1 px-4 text-xs text-muted">
+      <a href="#plataformas" class="flex items-center gap-3 rounded-md px-3 py-2.5 hover:bg-surface hover:text-white"><svg class="size-4 text-[#dda9c9]" fill="none" stroke="currentColor" stroke-width="1.7"><use href="#i-instagram"/></svg>Instagram<span class="ml-auto size-1.5 rounded-full bg-mint" aria-label="Con datos demo"></span></a>
+      <a href="#plataformas" class="flex items-center gap-3 rounded-md px-3 py-2.5 hover:bg-surface hover:text-white"><svg class="size-4 text-mint" fill="none" stroke="currentColor" stroke-width="1.7"><use href="#i-tiktok"/></svg>TikTok<span class="ml-auto size-1.5 rounded-full bg-mint" aria-label="Con datos demo"></span></a>
+      <a href="#plataformas" class="flex items-center gap-3 rounded-md px-3 py-2.5 hover:bg-surface hover:text-white"><svg class="size-4 text-peach" fill="none" stroke="currentColor" stroke-width="1.7"><use href="#i-youtube"/></svg>YouTube<span class="ml-auto size-1.5 rounded-full bg-mint" aria-label="Con datos demo"></span></a>
+    </nav>
+    <div class="mt-auto p-4">
+      <div class="border-t border-line pt-5">
+        <div class="mb-4 flex items-center gap-2 px-3 text-[11px] text-muted"><span class="size-1.5 rounded-full bg-mint"></span>Datos de demostración</div>
+        <a href="#metodologia" class="flex items-center gap-3 rounded-md px-3 py-2 text-xs text-muted hover:bg-surface hover:text-white"><svg class="size-4" fill="none" stroke="currentColor" stroke-width="1.7"><use href="#i-help"/></svg>Ayuda y metodología<svg class="ml-auto size-3" fill="none" stroke="currentColor" stroke-width="1.7"><use href="#i-arrow"/></svg></a>
+      </div>
+    </div>
+  </aside>
+
+  <div class="min-w-0 lg:ml-56">
+    <header class="flex min-h-20 items-center justify-between gap-3 border-b border-line px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center gap-3 text-xs text-muted"><a href="#resumen" class="text-xl font-extrabold text-white lg:hidden">folio<span class="text-lavender">.</span></a><span class="hidden sm:inline">Workspace</span><span class="hidden text-line sm:inline">/</span><span class="hidden text-white sm:inline">Vista general</span></div>
+      <div class="flex items-center gap-3 sm:gap-5">
+        <span class="hidden items-center gap-1.5 text-[10px] text-muted md:flex"><span class="size-1.5 rounded-full bg-mint"></span>Actualizado: 15 oct, 18:30</span>
+        <span class="rounded border border-lavender/20 bg-lavender/8 px-2 py-1 text-[10px] font-semibold text-lavender">DEMO</span>
+        <a href="#alertas" title="Ver 3 alertas" aria-label="Ver 3 alertas" class="relative grid size-8 place-items-center rounded-full text-muted hover:bg-surface hover:text-white"><svg class="size-4" fill="none" stroke="currentColor" stroke-width="1.7"><use href="#i-bell"/></svg><span class="absolute top-0 right-0 size-1.5 rounded-full bg-lavender"></span></a>
+        <details class="relative border-l border-line pl-3 sm:pl-5">
+          <summary class="flex list-none items-center gap-2" aria-label="Perfil de Lucía Martín"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=80&h=80&fit=crop&crop=faces&auto=format" alt="" width="32" height="32" class="size-8 rounded-full object-cover"><span class="hidden text-xs font-semibold sm:block">Lucía M.</span><svg class="size-3 text-muted" fill="none" stroke="currentColor" stroke-width="1.7"><use href="#i-down"/></svg></summary>
+          <div class="absolute top-11 right-0 z-40 w-56 rounded-lg border border-line bg-panel p-4 shadow-xl"><p class="text-sm font-semibold">Lucía Martín</p><p class="mt-1 text-xs text-muted">Creadora · Lifestyle & bienestar</p><p class="mt-3 border-t border-line pt-3 text-xs text-lavender">Cuenta de demostración</p></div>
+        </details>
+      </div>
+    </header>
+
+    <main id="contenido" class="mx-auto max-w-[1600px] min-w-0 px-4 py-6 sm:px-6 lg:px-8 lg:py-8">
+      <nav aria-label="Navegación móvil" class="mb-6 flex gap-1 overflow-x-auto border-b border-line pb-3 text-xs lg:hidden"><a class="shrink-0 rounded-md bg-lavender/10 px-3 py-2 text-lavender" href="#resumen">Resumen</a><a class="shrink-0 rounded-md px-3 py-2 text-muted hover:text-white" href="#rendimiento">Analítica</a><a class="shrink-0 rounded-md px-3 py-2 text-muted hover:text-white" href="#productos">Productos</a><a class="shrink-0 rounded-md px-3 py-2 text-muted hover:text-white" href="#campanas">Campañas</a></nav>
+
+      <section id="resumen" aria-labelledby="titulo" class="scroll-mt-6">
+        <div class="mb-6 flex flex-col justify-between gap-5 md:flex-row md:items-end">
+          <div><div class="mb-2 flex items-center gap-2 text-[11px] text-muted"><span class="size-1.5 rounded-full bg-lavender"></span>TU NEGOCIO, EN PERSPECTIVA</div><h1 id="titulo" class="text-2xl font-semibold sm:text-[29px]">Cada publicación cuenta<span class="text-lavender">.</span></h1><p class="mt-2 text-xs text-muted sm:text-[13px]">Tu impacto, tus campañas y todo lo que estás construyendo.</p></div>
+          <div class="flex flex-wrap items-center gap-2">
+            <details class="relative">
+              <summary class="flex h-9 list-none items-center gap-2 rounded-md border border-line bg-panel px-3 text-[11px] hover:border-muted"><svg class="size-3.5 text-muted" fill="none" stroke="currentColor" stroke-width="1.7"><use href="#i-calendar"/></svg>1 – 15 oct, 2026<svg class="ml-1 size-3 text-muted" fill="none" stroke="currentColor" stroke-width="1.7"><use href="#i-down"/></svg></summary>
+              <div class="absolute top-11 left-0 z-20 w-64 rounded-lg border border-line bg-panel p-4 shadow-xl md:right-0 md:left-auto"><p class="text-xs font-semibold">Periodo de demostración</p><p class="mt-2 text-xs leading-5 text-muted">1–15 octubre de 2026</p><p class="mt-1 text-xs leading-5 text-muted">Comparativa: 16–30 septiembre de 2026</p><span class="mt-3 inline-flex rounded bg-lavender/10 px-2 py-1 text-[10px] text-lavender">15 días · EUR · Europe/Madrid</span></div>
+            </details>
+            <a href="./data/informe-octubre.csv" download class="flex h-9 items-center gap-2 rounded-md bg-lavender px-3 text-[11px] font-bold text-[#17121f] hover:bg-[#cbbcff]"><svg class="size-3.5" fill="none" stroke="currentColor" stroke-width="1.8"><use href="#i-download"/></svg>Exportar informe</a>
+          </div>
+        </div>
+
+        <div class="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
+          <article id="comisiones" class="relative scroll-mt-6 overflow-hidden rounded-lg border border-lavender/30 bg-linear-to-br from-lavender/9 via-panel to-panel p-5">
+            <div class="flex items-center justify-between"><h2 class="text-xs text-[#c9c7d0]">Comisiones generadas</h2><span class="grid size-7 place-items-center rounded-md bg-lavender/10 text-lavender"><svg class="size-3.5" fill="none" stroke="currentColor" stroke-width="1.6"><use href="#i-wallet"/></svg></span></div>
+            <p class="mt-4 text-[32px] leading-none font-semibold tabular-nums">9.666<span class="ml-1 text-2xl text-[#c2bacf]">€</span></p>
+            <div class="mt-4 flex items-center gap-2 text-[10px]"><span class="flex items-center gap-0.5 rounded bg-mint/8 px-1.5 py-1 font-semibold text-mint"><svg class="size-3" fill="none" stroke="currentColor" stroke-width="1.7"><use href="#i-arrow"/></svg>18,6 %</span><span class="text-muted">vs. periodo anterior</span></div>
+            <div aria-hidden="true" class="absolute right-4 bottom-5 flex h-11 items-end gap-1 opacity-60"><span class="h-3 w-1 rounded-t bg-lavender/35"></span><span class="h-5 w-1 rounded-t bg-lavender/40"></span><span class="h-4 w-1 rounded-t bg-lavender/45"></span><span class="h-7 w-1 rounded-t bg-lavender/50"></span><span class="h-6 w-1 rounded-t bg-lavender/60"></span><span class="h-9 w-1 rounded-t bg-lavender/80"></span><span class="h-11 w-1 rounded-t bg-lavender"></span></div>
+          </article>
+          <article class="rounded-lg border border-line bg-panel p-5">
+            <div class="flex items-center justify-between"><h2 class="text-xs text-[#c9c7d0]">Ventas totales</h2><span class="grid size-7 place-items-center rounded-md bg-mint/8 text-mint"><svg class="size-3.5" fill="none" stroke="currentColor" stroke-width="1.6"><use href="#i-bag"/></svg></span></div>
+            <p class="mt-4 text-[32px] leading-none font-semibold tabular-nums">842<span class="ml-2 text-xs font-normal text-muted">ventas</span></p>
+            <div class="mt-4 flex items-center gap-2 text-[10px]"><span class="flex items-center gap-0.5 rounded bg-mint/8 px-1.5 py-1 font-semibold text-mint"><svg class="size-3" fill="none" stroke="currentColor" stroke-width="1.7"><use href="#i-arrow"/></svg>12,6 %</span><span class="text-muted">vs. periodo anterior</span></div>
+          </article>
+          <article class="rounded-lg border border-line bg-panel p-5">
+            <div class="flex items-center justify-between"><h2 class="text-xs text-[#c9c7d0]">Alcance total</h2><span class="grid size-7 place-items-center rounded-md bg-peach/8 text-peach"><svg class="size-3.5" fill="none" stroke="currentColor" stroke-width="1.6"><use href="#i-globe"/></svg></span></div>
+            <p class="mt-4 text-[32px] leading-none font-semibold tabular-nums">1,24<span class="ml-1 text-2xl text-muted">M</span></p>
+            <div class="mt-4 flex items-center gap-2 text-[10px]"><span class="flex items-center gap-0.5 rounded bg-mint/8 px-1.5 py-1 font-semibold text-mint"><svg class="size-3" fill="none" stroke="currentColor" stroke-width="1.7"><use href="#i-arrow"/></svg>8,4 %</span><span class="text-muted">vs. periodo anterior</span></div>
+          </article>
+          <article class="relative flex flex-col justify-between overflow-hidden rounded-lg border border-lavender/25 bg-[#c6b4f4] p-5 text-[#251b3b]">
+            <div class="flex items-center justify-between"><h2 class="text-xs font-bold">Un poco más cerca</h2><svg class="size-4" fill="none" stroke="currentColor" stroke-width="1.7"><use href="#i-target"/></svg></div>
+            <div class="mt-4"><p class="text-[27px] leading-none font-bold">80,6 %<span class="ml-2 text-[11px] font-medium">de tu objetivo</span></p><div role="progressbar" aria-label="Objetivo de comisiones" aria-valuenow="80.55" aria-valuemin="0" aria-valuemax="100" aria-valuetext="9.666 de 12.000 euros" class="mt-3 h-1.5 overflow-hidden rounded-full bg-[#251b3b]/15"><div class="h-full w-[80.55%] rounded-full bg-[#4e396f]"></div></div><div class="mt-2.5 flex justify-between text-[10px] font-semibold"><span>9.666 € / 12.000 €</span><span>Objetivo del periodo</span></div></div>
+          </article>
+        </div>
+
+        <div class="mt-3 grid grid-cols-2 gap-3 xl:grid-cols-4">
+          <article class="rounded-lg border border-line bg-panel px-4 py-4"><h2 class="text-[11px] text-muted">Impresiones</h2><div class="mt-2 flex flex-wrap items-baseline justify-between gap-2"><p class="text-xl font-semibold tabular-nums">2,48 M</p><span class="text-[10px] text-mint">↗ 11,2 %</span></div></article>
+          <article class="rounded-lg border border-line bg-panel px-4 py-4"><h2 class="text-[11px] text-muted">Tasa de conversión</h2><div class="mt-2 flex flex-wrap items-baseline justify-between gap-2"><p class="text-xl font-semibold tabular-nums">0,068 %</p><span class="text-[10px] text-mint">↗ 0,003 pp</span></div></article>
+          <article class="rounded-lg border border-line bg-panel px-4 py-4"><h2 class="text-[11px] text-muted">Tasa de engagement</h2><div class="mt-2 flex flex-wrap items-baseline justify-between gap-2"><p class="text-xl font-semibold tabular-nums">6,82 %</p><span class="text-[10px] text-peach">↘ 0,38 pp</span></div></article>
+          <article class="rounded-lg border border-line bg-panel px-4 py-4"><h2 class="text-[11px] text-muted">Retorno de inversión</h2><div class="mt-2 flex flex-wrap items-baseline justify-between gap-2"><p class="text-xl font-semibold tabular-nums">245,2 %</p><span class="text-[10px] text-mint">↗ 41,1 pp</span></div></article>
+        </div>
+        <p class="mt-3 text-[10px] text-muted">Comparado con los 15 días anteriores · Alcance agregado, no deduplicado entre canales · Datos simulados</p>
+      </section>
+
+      <section id="rendimiento" aria-labelledby="drivers-heading" class="mt-8 scroll-mt-6">
+        <div class="mb-4 flex items-center justify-between gap-2"><h2 id="drivers-heading" class="text-sm font-semibold">Detrás de tus resultados</h2><span class="flex items-center gap-1.5 text-[10px] text-muted"><span class="size-1.5 rounded-full bg-lavender"></span>1–15 octubre</span></div>
+        <div class="grid min-w-0 gap-4 xl:grid-cols-3">
+          <article class="min-w-0 rounded-lg border border-line bg-panel p-4 sm:p-5 xl:col-span-2">
+            <div class="flex flex-wrap items-start justify-between gap-3"><div><h3 class="text-[13px] font-semibold">Evolución de comisiones</h3><p class="mt-1 text-[10px] text-muted">Pequeñas acciones. Resultados que crecen.</p></div><span class="flex items-center gap-1.5 rounded-md border border-line px-2 py-1 text-[10px] text-muted"><span class="size-1.5 rounded-full bg-lavender"></span>Comisiones diarias</span></div>
+            <div class="mt-5 flex items-baseline gap-3"><p class="text-[26px] font-semibold tabular-nums">9.666<span class="ml-1 text-lg text-muted">€</span></p><span class="text-[10px] text-mint">↗ 18,6 %</span><span class="hidden text-[10px] text-muted sm:inline">respecto al periodo anterior</span></div>
+            <figure class="mt-4" aria-label="Comisiones diarias del 1 al 15 de octubre. Máximo de 910 euros el 13 de octubre.">
+              <div class="relative flex h-44 gap-3 sm:h-48">
+                <div aria-hidden="true" class="flex w-9 shrink-0 flex-col justify-between pb-0 text-right text-[9px] text-muted"><span>1.000 €</span><span>750 €</span><span>500 €</span><span>250 €</span><span>0 €</span></div>
+                <div class="relative flex min-w-0 flex-1 items-end justify-between gap-1.5 border-b border-line px-1 sm:gap-3 sm:px-2">
+                  <div aria-hidden="true" class="pointer-events-none absolute inset-0 flex flex-col justify-between"><span class="border-t border-dashed border-line"></span><span class="border-t border-dashed border-line"></span><span class="border-t border-dashed border-line"></span><span class="border-t border-dashed border-line"></span><span></span></div>
+                  <div title="1 oct: 420 €" class="relative h-[42%] flex-1 rounded-t bg-lavender/45 transition-colors hover:bg-lavender"><span class="sr-only">1 oct: 420 €</span></div>
+                  <div title="2 oct: 510 €" class="relative h-[51%] flex-1 rounded-t bg-lavender/50 transition-colors hover:bg-lavender"><span class="sr-only">2 oct: 510 €</span></div>
+                  <div title="3 oct: 465 €" class="relative h-[46.5%] flex-1 rounded-t bg-lavender/45 transition-colors hover:bg-lavender"><span class="sr-only">3 oct: 465 €</span></div>
+                  <div title="4 oct: 585 €" class="relative h-[58.5%] flex-1 rounded-t bg-lavender/55 transition-colors hover:bg-lavender"><span class="sr-only">4 oct: 585 €</span></div>
+                  <div title="5 oct: 620 €" class="relative h-[62%] flex-1 rounded-t bg-lavender/60 transition-colors hover:bg-lavender"><span class="sr-only">5 oct: 620 €</span></div>
+                  <div title="6 oct: 480 €" class="relative h-[48%] flex-1 rounded-t bg-lavender/45 transition-colors hover:bg-lavender"><span class="sr-only">6 oct: 480 €</span></div>
+                  <div title="7 oct: 710 €" class="relative h-[71%] flex-1 rounded-t bg-lavender/65 transition-colors hover:bg-lavender"><span class="sr-only">7 oct: 710 €</span></div>
+                  <div title="8 oct: 650 €" class="relative h-[65%] flex-1 rounded-t bg-lavender/60 transition-colors hover:bg-lavender"><span class="sr-only">8 oct: 650 €</span></div>
+                  <div title="9 oct: 590 €" class="relative h-[59%] flex-1 rounded-t bg-lavender/55 transition-colors hover:bg-lavender"><span class="sr-only">9 oct: 590 €</span></div>
+                  <div title="10 oct: 820 €" class="relative h-[82%] flex-1 rounded-t bg-lavender/75 transition-colors hover:bg-lavender"><span class="sr-only">10 oct: 820 €</span></div>
+                  <div title="11 oct: 735 €" class="relative h-[73.5%] flex-1 rounded-t bg-lavender/65 transition-colors hover:bg-lavender"><span class="sr-only">11 oct: 735 €</span></div>
+                  <div title="12 oct: 680 €" class="relative h-[68%] flex-1 rounded-t bg-lavender/60 transition-colors hover:bg-lavender"><span class="sr-only">12 oct: 680 €</span></div>
+                  <div title="13 oct: 910 €" class="relative h-[91%] flex-1 rounded-t bg-lavender transition-colors hover:bg-[#d2c4ff]"><span class="sr-only">13 oct: 910 €</span></div>
+                  <div title="14 oct: 760 €" class="relative h-[76%] flex-1 rounded-t bg-lavender/70 transition-colors hover:bg-lavender"><span class="sr-only">14 oct: 760 €</span></div>
+                  <div title="15 oct: 731 €" class="relative h-[73.1%] flex-1 rounded-t bg-lavender/65 transition-colors hover:bg-lavender"><span class="sr-only">15 oct: 731 €</span></div>
+                </div>
+              </div>
+              <div aria-hidden="true" class="mt-2 ml-12 flex justify-between text-[9px] text-muted"><span>01 oct</span><span>03 oct</span><span>05 oct</span><span>07 oct</span><span>09 oct</span><span>11 oct</span><span>13 oct</span><span>15 oct</span></div>
+              <figcaption class="mt-5 flex flex-wrap justify-between gap-2 border-t border-line pt-3 text-[10px] text-muted"><span>Media diaria <strong class="ml-1 font-medium text-white">644,40 €</strong></span><span class="flex items-center gap-1"><svg class="size-3 text-lavender" fill="none" stroke="currentColor" stroke-width="1.7"><use href="#i-sparkles"/></svg>Mejor día: 13 oct <strong class="ml-1 font-medium text-white">910 €</strong></span></figcaption>
+            </figure>
+          </article>
+
+          <article class="min-w-0 rounded-lg border border-line bg-panel p-5">
+            <div class="flex justify-between"><h3 class="text-[13px] font-semibold">¿Dónde está tu impacto?</h3><svg class="size-4 text-muted" fill="none" stroke="currentColor" stroke-width="1.7"><use href="#i-globe"/></svg></div><p class="mt-1 text-[10px] text-muted">Comisiones por plataforma</p>
+            <figure class="my-5 flex justify-center" aria-label="Instagram 48,1 %, TikTok 36,3 % y YouTube 15,6 % de las comisiones">
+              <div class="relative grid size-40 place-items-center rounded-full bg-conic/[from_0deg] from-lavender from-0% via-mint via-48.1% to-peach to-84.4% [background:conic-gradient(#b9a3ff_0%_48.1%,#b4e9ce_48.1%_84.4%,#efbaa1_84.4%_100%)]"><div class="absolute inset-4 rounded-full bg-panel"></div><div class="relative text-center"><span class="text-[10px] text-muted">3 plataformas</span><p class="mt-0.5 text-xl font-semibold">9.666 €</p><span class="text-[9px] text-muted">en comisiones</span></div></div>
+            </figure>
+            <ol class="space-y-3 text-[11px]">
+              <li class="flex items-center gap-2"><span class="size-2 rounded-full bg-lavender"></span><span>Instagram</span><span class="ml-auto font-medium tabular-nums">4.650 €</span><span class="w-10 text-right text-muted">48,1 %</span></li>
+              <li class="flex items-center gap-2"><span class="size-2 rounded-full bg-mint"></span><span>TikTok</span><span class="ml-auto font-medium tabular-nums">3.510 €</span><span class="w-10 text-right text-muted">36,3 %</span></li>
+              <li class="flex items-center gap-2"><span class="size-2 rounded-full bg-peach"></span><span>YouTube</span><span class="ml-auto font-medium tabular-nums">1.506 €</span><span class="w-10 text-right text-muted">15,6 %</span></li>
+            </ol>
+            <a href="#plataformas" class="mt-5 flex items-center justify-between border-t border-line pt-3 text-[10px] text-muted hover:text-lavender">Comparar plataformas<svg class="size-3.5" fill="none" stroke="currentColor" stroke-width="1.7"><use href="#i-arrow"/></svg></a>
+          </article>
+        </div>
+
+        <div class="mt-4 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+          <article class="rounded-lg border border-line bg-panel p-5">
+            <div class="flex items-center justify-between"><h3 class="text-[13px] font-semibold">De la atención a la acción</h3><svg class="size-4 text-muted" fill="none" stroke="currentColor" stroke-width="1.7"><use href="#i-link"/></svg></div><p class="mt-1 text-[10px] text-muted">Funnel de conversión</p>
+            <ol class="mt-5 space-y-4">
+              <li><div class="mb-2 flex justify-between text-[11px]"><span class="text-muted">01 <span class="ml-1.5 text-white">Alcance</span></span><span class="font-semibold">1.240.000</span></div><div class="h-2 rounded-sm bg-lavender"></div></li>
+              <li><div class="mb-2 flex justify-between text-[11px]"><span class="text-muted">02 <span class="ml-1.5 text-white">Interacciones</span></span><span class="font-semibold">84.560</span></div><div class="h-2 w-[76%] rounded-sm bg-lavender/70"></div><p class="mt-1 text-right text-[9px] text-muted">6,82 % del alcance</p></li>
+              <li><div class="mb-2 flex justify-between text-[11px]"><span class="text-muted">03 <span class="ml-1.5 text-white">Clics al enlace</span></span><span class="font-semibold">24.800</span></div><div class="h-2 w-[50%] rounded-sm bg-lavender/45"></div><p class="mt-1 text-right text-[9px] text-muted">29,33 % de interacciones</p></li>
+              <li><div class="mb-2 flex justify-between text-[11px]"><span class="text-muted">04 <span class="ml-1.5 text-white">Ventas</span></span><span class="font-semibold text-mint">842</span></div><div class="h-2 w-[24%] rounded-sm bg-mint"></div><p class="mt-1 text-right text-[9px] text-muted">3,40 % de clics</p></li>
+            </ol><p class="mt-3 text-[9px] text-muted">Etapas ilustrativas; anchos no proporcionales.</p>
+          </article>
+
+          <article class="rounded-lg border border-line bg-panel p-5">
+            <div class="flex items-center justify-between"><h3 class="text-[13px] font-semibold">Tus productos estrella</h3><span class="rounded bg-lavender/10 px-1.5 py-1 text-[9px] text-lavender">TOP 3</span></div><p class="mt-1 text-[10px] text-muted">Ordenados por comisiones generadas</p>
+            <ol class="mt-5 space-y-5">
+              <li><div class="flex items-center gap-3"><span class="w-2 text-[10px] text-muted">1</span><img src="https://images.unsplash.com/photo-1541643600914-78b084683601?w=100&h=100&fit=crop&auto=format" alt="Frasco de perfume, imagen ilustrativa del Producto B" width="40" height="40" loading="lazy" class="size-10 rounded-md object-cover"><div class="min-w-0 flex-1"><div class="flex justify-between gap-2 text-[11px]"><span class="font-semibold">Producto B</span><span>4.356 €</span></div><div class="mt-1 flex justify-between text-[9px] text-muted"><span>242 ventas</span><span>45,1 % del total</span></div><div class="mt-2 h-1 rounded-full bg-surface"><div class="h-full w-full rounded-full bg-lavender"></div></div></div></div></li>
+              <li><div class="flex items-center gap-3"><span class="w-2 text-[10px] text-muted">2</span><img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=100&h=100&fit=crop&auto=format" alt="Cosmética, imagen ilustrativa del Producto A" width="40" height="40" loading="lazy" class="size-10 rounded-md object-cover"><div class="min-w-0 flex-1"><div class="flex justify-between gap-2 text-[11px]"><span class="font-semibold">Producto A</span><span>3.150 €</span></div><div class="mt-1 flex justify-between text-[9px] text-muted"><span>420 ventas</span><span>32,6 % del total</span></div><div class="mt-2 h-1 rounded-full bg-surface"><div class="h-full w-[72.3%] rounded-full bg-mint"></div></div></div></div></li>
+              <li><div class="flex items-center gap-3"><span class="w-2 text-[10px] text-muted">3</span><img src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=100&h=100&fit=crop&auto=format" alt="Producto de cuidado personal, imagen ilustrativa del Producto C" width="40" height="40" loading="lazy" class="size-10 rounded-md object-cover"><div class="min-w-0 flex-1"><div class="flex justify-between gap-2 text-[11px]"><span class="font-semibold">Producto C</span><span>2.160 €</span></div><div class="mt-1 flex justify-between text-[9px] text-muted"><span>180 ventas</span><span>22,3 % del total</span></div><div class="mt-2 h-1 rounded-full bg-surface"><div class="h-full w-[49.6%] rounded-full bg-peach"></div></div></div></div></li>
+            </ol>
+            <p class="mt-5 border-t border-line pt-3 text-[10px] text-muted">Producto B lidera en comisión y ROI.</p>
+          </article>
+
+          <article class="rounded-lg border border-line bg-panel p-5 md:col-span-2 xl:col-span-1">
+            <h3 class="text-[13px] font-semibold">Conversaciones que conectan</h3><p class="mt-1 text-[10px] text-muted">Interacciones y engagement por plataforma</p>
+            <div class="mt-5 space-y-5">
+              <div><div class="flex items-center gap-2 text-[11px]"><svg class="size-3.5 text-lavender" fill="none" stroke="currentColor" stroke-width="1.7"><use href="#i-instagram"/></svg><span>Instagram</span><span class="ml-auto font-semibold">47.120</span></div><div class="mt-2 h-1.5 rounded-full bg-surface"><div class="h-full w-full rounded-full bg-lavender"></div></div><p class="mt-1.5 text-right text-[9px] text-muted">7,60 % engagement</p></div>
+              <div><div class="flex items-center gap-2 text-[11px]"><svg class="size-3.5 text-mint" fill="none" stroke="currentColor" stroke-width="1.7"><use href="#i-tiktok"/></svg><span>TikTok</span><span class="ml-auto font-semibold">32.200</span></div><div class="mt-2 h-1.5 rounded-full bg-surface"><div class="h-full w-[68.3%] rounded-full bg-mint"></div></div><p class="mt-1.5 text-right text-[9px] text-muted">7,00 % engagement</p></div>
+              <div><div class="flex items-center gap-2 text-[11px]"><svg class="size-3.5 text-peach" fill="none" stroke="currentColor" stroke-width="1.7"><use href="#i-youtube"/></svg><span>YouTube</span><span class="ml-auto font-semibold">5.240</span></div><div class="mt-2 h-1.5 rounded-full bg-surface"><div class="h-full w-[11.1%] rounded-full bg-peach"></div></div><p class="mt-1.5 text-right text-[9px] text-muted">3,28 % engagement</p></div>
+            </div><p class="mt-4 border-t border-line pt-3 text-[10px] text-muted">Me gusta, comentarios, guardados y compartidos.</p>
+          </article>
+        </div>
+
+        <div class="mt-4 grid gap-4 xl:grid-cols-3">
+          <article class="rounded-lg border border-line bg-panel p-5 xl:col-span-2">
+            <div class="flex flex-wrap items-start justify-between gap-3"><div><h3 class="text-[13px] font-semibold">La constancia también se mide</h3><p class="mt-1 text-[10px] text-muted">Actividad de publicación · 1–15 octubre</p></div><div class="flex items-center gap-2"><span class="text-lg font-semibold">32</span><span class="text-[10px] text-muted">publicaciones</span><span class="ml-2 rounded bg-mint/8 px-2 py-1 text-[10px] text-mint">+8 vs. anterior</span></div></div>
+            <figure class="mt-5" aria-label="Publicaciones diarias: 2, 1, 3, 2, 2, 1, 3, 2, 2, 4, 2, 1, 3, 2 y 2.">
+              <div class="grid grid-cols-5 gap-2 sm:grid-cols-15">
+                <div class="text-center"><div title="1 oct: 2 publicaciones" class="grid h-8 place-items-center rounded bg-lavender/30 text-[10px] text-white">2</div><span class="mt-1 block text-[9px] text-muted">01</span></div>
+                <div class="text-center"><div title="2 oct: 1 publicación" class="grid h-8 place-items-center rounded bg-lavender/15 text-[10px] text-white">1</div><span class="mt-1 block text-[9px] text-muted">02</span></div>
+                <div class="text-center"><div title="3 oct: 3 publicaciones" class="grid h-8 place-items-center rounded bg-lavender/55 text-[10px] text-white">3</div><span class="mt-1 block text-[9px] text-muted">03</span></div>
+                <div class="text-center"><div title="4 oct: 2 publicaciones" class="grid h-8 place-items-center rounded bg-lavender/30 text-[10px] text-white">2</div><span class="mt-1 block text-[9px] text-muted">04</span></div>
+                <div class="text-center"><div title="5 oct: 2 publicaciones" class="grid h-8 place-items-center rounded bg-lavender/30 text-[10px] text-white">2</div><span class="mt-1 block text-[9px] text-muted">05</span></div>
+                <div class="text-center"><div title="6 oct: 1 publicación" class="grid h-8 place-items-center rounded bg-lavender/15 text-[10px] text-white">1</div><span class="mt-1 block text-[9px] text-muted">06</span></div>
+                <div class="text-center"><div title="7 oct: 3 publicaciones" class="grid h-8 place-items-center rounded bg-lavender/55 text-[10px] text-white">3</div><span class="mt-1 block text-[9px] text-muted">07</span></div>
+                <div class="text-center"><div title="8 oct: 2 publicaciones" class="grid h-8 place-items-center rounded bg-lavender/30 text-[10px] text-white">2</div><span class="mt-1 block text-[9px] text-muted">08</span></div>
+                <div class="text-center"><div title="9 oct: 2 publicaciones" class="grid h-8 place-items-center rounded bg-lavender/30 text-[10px] text-white">2</div><span class="mt-1 block text-[9px] text-muted">09</span></div>
+                <div class="text-center"><div title="10 oct: 4 publicaciones" class="grid h-8 place-items-center rounded bg-lavender text-[10px] font-bold text-canvas">4</div><span class="mt-1 block text-[9px] text-muted">10</span></div>
+                <div class="text-center"><div title="11 oct: 2 publicaciones" class="grid h-8 place-items-center rounded bg-lavender/30 text-[10px] text-white">2</div><span class="mt-1 block text-[9px] text-muted">11</span></div>
+                <div class="text-center"><div title="12 oct: 1 publicación" class="grid h-8 place-items-center rounded bg-lavender/15 text-[10px] text-white">1</div><span class="mt-1 block text-[9px] text-muted">12</span></div>
+                <div class="text-center"><div title="13 oct: 3 publicaciones" class="grid h-8 place-items-center rounded bg-lavender/55 text-[10px] text-white">3</div><span class="mt-1 block text-[9px] text-muted">13</span></div>
+                <div class="text-center"><div title="14 oct: 2 publicaciones" class="grid h-8 place-items-center rounded bg-lavender/30 text-[10px] text-white">2</div><span class="mt-1 block text-[9px] text-muted">14</span></div>
+                <div class="text-center"><div title="15 oct: 2 publicaciones" class="grid h-8 place-items-center rounded bg-lavender/30 text-[10px] text-white">2</div><span class="mt-1 block text-[9px] text-muted">15</span></div>
+              </div>
+              <figcaption class="mt-4 flex flex-wrap items-center justify-between gap-3 text-[10px] text-muted"><span>Instagram <strong class="ml-1 font-medium text-white">16</strong><span class="mx-3 text-line">/</span>TikTok <strong class="ml-1 font-medium text-white">12</strong><span class="mx-3 text-line">/</span>YouTube <strong class="ml-1 font-medium text-white">4</strong></span><span>2,13 publicaciones / día</span></figcaption>
+            </figure>
+          </article>
+          <article class="flex flex-col justify-between rounded-lg border border-mint/15 bg-linear-to-br from-mint/8 to-panel p-5"><div class="flex items-center gap-2 text-[11px] font-semibold text-mint"><svg class="size-4" fill="none" stroke="currentColor" stroke-width="1.7"><use href="#i-sparkles"/></svg>Tu siguiente oportunidad</div><p class="mt-3 text-[13px] leading-6">Producto B convierte cada venta en <strong class="font-semibold text-mint">18 € de comisión.</strong></p><p class="mt-2 text-[10px] leading-5 text-muted">Con un ROI del 296 %, es un buen candidato para probar más contenido, midiendo si mantiene su rentabilidad.</p><a class="mt-3 flex items-center justify-between text-[10px] font-semibold text-mint hover:text-white" href="#productos">Explorar rendimiento<svg class="size-3.5" fill="none" stroke="currentColor" stroke-width="1.7"><use href="#i-arrow"/></svg></a></article>
+        </div>
+      </section>
+
+      <section id="operaciones" aria-labelledby="operations-heading" class="mt-8 scroll-mt-6">
+        <div class="mb-4 flex flex-wrap items-center justify-between gap-3"><h2 id="operations-heading" class="text-sm font-semibold">Los detalles hacen la diferencia</h2><nav aria-label="Detalles operacionales" class="flex gap-4 text-[10px] text-muted"><a class="hover:text-lavender" href="#productos">Productos</a><a class="hover:text-lavender" href="#plataformas">Plataformas</a><a class="hover:text-lavender" href="#campanas">Campañas</a></nav></div>
+
+        <article id="productos" class="min-w-0 scroll-mt-5 rounded-lg border border-line bg-panel">
+          <div class="flex items-center justify-between gap-3 px-4 py-4 sm:px-5"><div class="flex items-center gap-2"><svg class="size-4 text-lavender" fill="none" stroke="currentColor" stroke-width="1.7"><use href="#i-bag"/></svg><h3 class="text-[13px] font-semibold">Rendimiento por producto</h3></div><span class="text-[10px] text-muted">Comisión fija: 15 %</span></div>
+          <div role="region" aria-label="Tabla de productos, desplazamiento horizontal disponible" tabindex="0" class="overflow-x-auto rounded-b-lg">
+            <table class="w-full min-w-[680px] text-left text-[11px] tabular-nums">
+              <caption class="sr-only">Precios, ventas, costes y comisiones por producto, datos de demostración del 1 al 15 de octubre de 2026.</caption>
+              <thead class="border-y border-line bg-surface/60 text-[10px] text-muted"><tr><th scope="col" class="px-5 py-3 font-medium">Producto</th><th scope="col" class="px-3 py-3 text-right font-medium">Precio</th><th scope="col" class="px-3 py-3 text-right font-medium">Comisión / venta</th><th scope="col" class="px-3 py-3 text-right font-medium">Ventas</th><th scope="col" class="px-3 py-3 text-right font-medium">Comisiones</th><th scope="col" class="px-3 py-3 text-right font-medium">Costes</th><th scope="col" class="px-5 py-3 text-right font-medium">ROI</th></tr></thead>
+              <tbody class="divide-y divide-line">
+                <tr data-product="A" data-price="50" data-sales="420" data-cost="1000" data-commission="3150" class="hover:bg-white/2"><th scope="row" class="px-5 py-3.5 font-medium"><span class="inline-flex items-center gap-2.5"><span class="grid size-7 place-items-center rounded-md bg-mint/10 text-[10px] text-mint">A</span>Producto A<span class="rounded bg-mint/8 px-1.5 py-0.5 text-[8px] text-mint">Más vendido</span></span></th><td class="px-3 py-3.5 text-right text-muted">50,00 €</td><td class="px-3 py-3.5 text-right text-muted">7,50 €</td><td class="px-3 py-3.5 text-right">420</td><td class="px-3 py-3.5 text-right font-semibold">3.150 €</td><td class="px-3 py-3.5 text-right text-muted">1.000 €</td><td class="px-5 py-3.5 text-right text-mint">215,0 %</td></tr>
+                <tr data-product="B" data-price="120" data-sales="242" data-cost="1100" data-commission="4356" class="hover:bg-white/2"><th scope="row" class="px-5 py-3.5 font-medium"><span class="inline-flex items-center gap-2.5"><span class="grid size-7 place-items-center rounded-md bg-lavender/10 text-[10px] text-lavender">B</span>Producto B<span class="rounded bg-lavender/10 px-1.5 py-0.5 text-[8px] text-lavender">Mejor ROI</span></span></th><td class="px-3 py-3.5 text-right text-muted">120,00 €</td><td class="px-3 py-3.5 text-right text-muted">18,00 €</td><td class="px-3 py-3.5 text-right">242</td><td class="px-3 py-3.5 text-right font-semibold">4.356 €</td><td class="px-3 py-3.5 text-right text-muted">1.100 €</td><td class="px-5 py-3.5 text-right text-mint">296,0 %</td></tr>
+                <tr data-product="C" data-price="80" data-sales="180" data-cost="700" data-commission="2160" class="hover:bg-white/2"><th scope="row" class="px-5 py-3.5 font-medium"><span class="inline-flex items-center gap-2.5"><span class="grid size-7 place-items-center rounded-md bg-peach/10 text-[10px] text-peach">C</span>Producto C</span></th><td class="px-3 py-3.5 text-right text-muted">80,00 €</td><td class="px-3 py-3.5 text-right text-muted">12,00 €</td><td class="px-3 py-3.5 text-right">180</td><td class="px-3 py-3.5 text-right font-semibold">2.160 €</td><td class="px-3 py-3.5 text-right text-muted">700 €</td><td class="px-5 py-3.5 text-right text-mint">208,6 %</td></tr>
+              </tbody>
+              <tfoot class="border-t border-line bg-surface/40 font-semibold"><tr><th scope="row" class="px-5 py-3">Total</th><td class="px-3 py-3 text-right text-muted">—</td><td class="px-3 py-3 text-right text-muted">—</td><td class="px-3 py-3 text-right">842</td><td class="px-3 py-3 text-right text-lavender">9.666 €</td><td class="px-3 py-3 text-right">2.800 €</td><td class="px-5 py-3 text-right text-mint">245,2 %</td></tr></tfoot>
+            </table>
+          </div>
+        </article>
+
+        <article id="plataformas" class="mt-4 min-w-0 scroll-mt-5 rounded-lg border border-line bg-panel">
+          <div class="flex flex-wrap items-center justify-between gap-2 px-4 py-4 sm:px-5"><div class="flex items-center gap-2"><svg class="size-4 text-lavender" fill="none" stroke="currentColor" stroke-width="1.7"><use href="#i-globe"/></svg><h3 class="text-[13px] font-semibold">Comparativa de plataformas</h3></div><span class="text-[10px] text-muted">Ordenadas por comisiones</span></div>
+          <div role="region" aria-label="Tabla de plataformas, desplazamiento horizontal disponible" tabindex="0" class="overflow-x-auto rounded-b-lg">
+            <table class="w-full min-w-[780px] text-left text-[11px] tabular-nums">
+              <caption class="sr-only">Alcance, engagement, conversiones, costes, comisiones y ROI por plataforma, ordenadas por comisiones.</caption>
+              <thead class="border-y border-line bg-surface/60 text-[10px] text-muted"><tr><th scope="col" class="px-5 py-3 font-medium">Plataforma</th><th scope="col" class="px-3 py-3 text-right font-medium">Alcance</th><th scope="col" class="px-3 py-3 text-right font-medium">Engagement</th><th scope="col" class="px-3 py-3 text-right font-medium">Conversiones</th><th scope="col" class="px-3 py-3 text-right font-medium">Tasa conv.</th><th scope="col" class="px-3 py-3 text-right font-medium">Costes</th><th scope="col" class="px-3 py-3 text-right font-medium">Comisiones</th><th scope="col" class="px-5 py-3 text-right font-medium">ROI</th></tr></thead>
+              <tbody class="divide-y divide-line">
+                <tr data-platform="Instagram" data-sales="410" data-reach="620000" data-interactions="47120" data-impressions="1240000" data-cost="1200" data-commission="4650" class="hover:bg-white/2"><th scope="row" class="px-5 py-4 font-medium"><span class="inline-flex items-center gap-2"><span class="text-[9px] text-muted">01</span><svg class="size-4 text-lavender" fill="none" stroke="currentColor" stroke-width="1.7"><use href="#i-instagram"/></svg>Instagram</span></th><td class="px-3 py-4 text-right">620.000</td><td class="px-3 py-4 text-right">7,60 %</td><td class="px-3 py-4 text-right">410</td><td class="px-3 py-4 text-right text-muted">0,066 %</td><td class="px-3 py-4 text-right text-muted">1.200 €</td><td class="px-3 py-4 text-right font-semibold">4.650 €</td><td class="px-5 py-4 text-right text-mint">287,5 %</td></tr>
+                <tr data-platform="TikTok" data-sales="300" data-reach="460000" data-interactions="32200" data-impressions="920000" data-cost="900" data-commission="3510" class="hover:bg-white/2"><th scope="row" class="px-5 py-4 font-medium"><span class="inline-flex items-center gap-2"><span class="text-[9px] text-muted">02</span><svg class="size-4 text-mint" fill="none" stroke="currentColor" stroke-width="1.7"><use href="#i-tiktok"/></svg>TikTok</span></th><td class="px-3 py-4 text-right">460.000</td><td class="px-3 py-4 text-right">7,00 %</td><td class="px-3 py-4 text-right">300</td><td class="px-3 py-4 text-right text-muted">0,065 %</td><td class="px-3 py-4 text-right text-muted">900 €</td><td class="px-3 py-4 text-right font-semibold">3.510 €</td><td class="px-5 py-4 text-right text-mint">290,0 %</td></tr>
+                <tr data-platform="YouTube" data-sales="132" data-reach="160000" data-interactions="5240" data-impressions="320000" data-cost="700" data-commission="1506" class="hover:bg-white/2"><th scope="row" class="px-5 py-4 font-medium"><span class="inline-flex items-center gap-2"><span class="text-[9px] text-muted">03</span><svg class="size-4 text-peach" fill="none" stroke="currentColor" stroke-width="1.7"><use href="#i-youtube"/></svg>YouTube</span></th><td class="px-3 py-4 text-right">160.000</td><td class="px-3 py-4 text-right">3,28 %</td><td class="px-3 py-4 text-right">132</td><td class="px-3 py-4 text-right text-muted">0,083 %</td><td class="px-3 py-4 text-right text-muted">700 €</td><td class="px-3 py-4 text-right font-semibold">1.506 €</td><td class="px-5 py-4 text-right text-mint">115,1 %</td></tr>
+                <tr class="text-muted"><th scope="row" class="px-5 py-3 font-medium">Otras plataformas</th><td class="px-3 py-3 text-right">—</td><td class="px-3 py-3 text-right">—</td><td class="px-3 py-3 text-right">—</td><td class="px-3 py-3 text-right">—</td><td class="px-3 py-3 text-right">—</td><td class="px-3 py-3 text-right">—</td><td class="px-5 py-3 text-right">—</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+        <article id="campanas" class="mt-4 min-w-0 scroll-mt-5 rounded-lg border border-line bg-panel">
+          <div class="flex flex-wrap items-center justify-between gap-2 px-4 py-4 sm:px-5"><div class="flex items-center gap-2"><svg class="size-4 text-lavender" fill="none" stroke="currentColor" stroke-width="1.7"><use href="#i-megaphone"/></svg><h3 class="text-[13px] font-semibold">Campañas en perspectiva</h3></div><span class="text-[10px] text-muted">Ranking por comisiones atribuidas</span></div>
+          <div role="region" aria-label="Tabla de campañas, desplazamiento horizontal disponible" tabindex="0" class="overflow-x-auto rounded-b-lg">
+            <table class="w-full min-w-[900px] text-left text-[11px] tabular-nums">
+              <caption class="sr-only">Ranking de campañas con fechas, productos, plataforma, estado, ventas, comisiones, costes y ROI. Resultados hasta el 15 de octubre.</caption>
+              <thead class="border-y border-line bg-surface/60 text-[10px] text-muted"><tr><th scope="col" class="px-5 py-3 font-medium">Campaña</th><th scope="col" class="px-3 py-3 font-medium">Fechas · 2026</th><th scope="col" class="px-3 py-3 font-medium">Productos</th><th scope="col" class="px-3 py-3 font-medium">Estado</th><th scope="col" class="px-3 py-3 text-right font-medium">Ventas</th><th scope="col" class="px-3 py-3 text-right font-medium">Comisiones</th><th scope="col" class="px-3 py-3 text-right font-medium">Costes</th><th scope="col" class="px-5 py-3 text-right font-medium">ROI</th></tr></thead>
+              <tbody class="divide-y divide-line">
+                <tr data-campaign="Rutina de otoño" data-sales="410" data-commission="4650" data-cost="1200" class="hover:bg-white/2"><th scope="row" class="px-5 py-4 font-medium"><span class="mr-2 text-[9px] text-muted">01</span>Rutina de otoño<span class="mt-1 ml-5 block text-[9px] font-normal text-muted">Instagram · 16 publicaciones</span></th><td class="px-3 py-4 text-muted">01 oct – 31 oct</td><td class="px-3 py-4 text-muted">A · B · C</td><td class="px-3 py-4"><span class="inline-flex items-center gap-1 rounded border border-mint/15 bg-mint/5 px-2 py-1 text-[9px] text-mint"><span class="size-1 rounded-full bg-mint"></span>Activa</span></td><td class="px-3 py-4 text-right">410</td><td class="px-3 py-4 text-right font-semibold">4.650 €</td><td class="px-3 py-4 text-right text-muted">1.200 €</td><td class="px-5 py-4 text-right text-mint">287,5 %</td></tr>
+                <tr data-campaign="Favoritos del mes" data-sales="300" data-commission="3510" data-cost="900" class="hover:bg-white/2"><th scope="row" class="px-5 py-4 font-medium"><span class="mr-2 text-[9px] text-muted">02</span>Favoritos del mes<span class="mt-1 ml-5 block text-[9px] font-normal text-muted">TikTok · 12 publicaciones</span></th><td class="px-3 py-4 text-muted">01 oct – 20 oct</td><td class="px-3 py-4 text-muted">A · B · C</td><td class="px-3 py-4"><span class="inline-flex items-center gap-1 rounded border border-mint/15 bg-mint/5 px-2 py-1 text-[9px] text-mint"><span class="size-1 rounded-full bg-mint"></span>Activa</span></td><td class="px-3 py-4 text-right">300</td><td class="px-3 py-4 text-right font-semibold">3.510 €</td><td class="px-3 py-4 text-right text-muted">900 €</td><td class="px-5 py-4 text-right text-mint">290,0 %</td></tr>
+                <tr data-campaign="Mi selección esencial" data-sales="132" data-commission="1506" data-cost="700" class="hover:bg-white/2"><th scope="row" class="px-5 py-4 font-medium"><span class="mr-2 text-[9px] text-muted">03</span>Mi selección esencial<span class="mt-1 ml-5 block text-[9px] font-normal text-muted">YouTube · 4 publicaciones</span></th><td class="px-3 py-4 text-muted">01 oct – 15 oct</td><td class="px-3 py-4 text-muted">A · B · C</td><td class="px-3 py-4"><span class="inline-flex items-center gap-1 rounded border border-line bg-surface px-2 py-1 text-[9px] text-muted"><svg class="size-2.5" fill="none" stroke="currentColor" stroke-width="1.7"><use href="#i-check"/></svg>Finalizada</span></td><td class="px-3 py-4 text-right">132</td><td class="px-3 py-4 text-right font-semibold">1.506 €</td><td class="px-3 py-4 text-right text-muted">700 €</td><td class="px-5 py-4 text-right text-mint">115,1 %</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="flex flex-wrap justify-between gap-2 border-t border-line px-5 py-3 text-[9px] text-muted"><span>3 campañas · Atribución exclusiva: una campaña por venta</span><span>Resultados parciales al 15 oct, 18:30</span></div>
+        </article>
+      </section>
+
+      <section id="alertas" aria-labelledby="alerts-heading" class="mt-8 scroll-mt-6">
+        <div class="mb-4 flex items-center gap-2"><h2 id="alerts-heading" class="text-sm font-semibold">Señales que merecen tu atención</h2><span class="rounded bg-surface px-1.5 py-0.5 text-[9px] text-muted">3</span></div>
+        <div class="grid gap-3 md:grid-cols-3">
+          <article class="rounded-lg border border-line bg-panel p-4"><div class="flex items-center gap-2 text-[11px] font-semibold text-mint"><span class="grid size-6 place-items-center rounded bg-mint/10"><svg class="size-3.5" fill="none" stroke="currentColor" stroke-width="1.7"><use href="#i-chart"/></svg></span>Las comisiones aceleran</div><p class="mt-3 text-[11px] leading-5 text-muted">Un <strong class="font-medium text-white">18,6 % más</strong> que en el periodo anterior: 1.516 € adicionales con un aumento del 12,6 % en ventas.</p></article>
+          <article class="rounded-lg border border-line bg-panel p-4"><div class="flex items-center gap-2 text-[11px] font-semibold text-peach"><span class="grid size-6 place-items-center rounded bg-peach/10"><svg class="size-3.5 rotate-90" fill="none" stroke="currentColor" stroke-width="1.7"><use href="#i-arrow"/></svg></span>El engagement pierde ritmo</div><p class="mt-3 text-[11px] leading-5 text-muted">Baja de 7,20 % a <strong class="font-medium text-white">6,82 % (−0,38 pp)</strong>. Prueba formatos más participativos y compara su respuesta.</p></article>
+          <article class="rounded-lg border border-line bg-panel p-4"><div class="flex items-center gap-2 text-[11px] font-semibold text-lavender"><span class="grid size-6 place-items-center rounded bg-lavender/10"><svg class="size-3.5" fill="none" stroke="currentColor" stroke-width="1.7"><use href="#i-target"/></svg></span>Revisa el coste en YouTube</div><p class="mt-3 text-[11px] leading-5 text-muted">Su ROI del <strong class="font-medium text-white">115,1 %</strong> es el menor de los tres canales. Evalúa reducir costes antes de ampliar la inversión.</p></article>
+        </div>
+      </section>
+
+      <section id="metodologia" aria-labelledby="method-heading" class="mt-7 scroll-mt-5 border-y border-line">
+        <details class="group py-4"><summary class="flex list-none flex-wrap items-center gap-2 text-[11px]"><svg class="size-3.5 text-muted" fill="none" stroke="currentColor" stroke-width="1.7"><use href="#i-help"/></svg><h2 id="method-heading" class="text-[11px] font-medium">De dónde salen estos números</h2><span class="ml-auto text-[10px] text-muted">Metodología y datos demo</span><svg class="size-3.5 text-muted transition-transform group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="1.7"><use href="#i-down"/></svg></summary>
+          <div class="grid gap-5 pt-5 pb-2 text-[11px] leading-6 text-muted md:grid-cols-2">
+            <div><p class="font-semibold text-white">Datos simulados, no resultados verificados</p><p>Periodo: 1–15 octubre de 2026. Comparativa: 16–30 septiembre de 2026. Todas las conversiones son ventas atribuidas, sin duplicación entre campañas. Los costes incluyen producción e inversión publicitaria; se asignan íntegramente a productos y plataformas.</p><p class="mt-2">El alcance suma audiencias de los canales y puede incluir a una misma persona en varias plataformas. El funnel es ilustrativo: las interacciones y clics no representan necesariamente usuarios únicos.</p><p class="mt-2">Base anterior: 8.150 € de comisiones; 748 ventas; 1.144.000 de alcance; 2.230.000 impresiones; 82.368 interacciones; 2.680 € de costes; 24 publicaciones.</p></div>
+            <div><p class="font-semibold text-white">Cálculos y criterios</p><ul class="mt-1 space-y-1"><li>Comisión por venta = precio × 15 %.</li><li>Conversión = ventas / alcance × 100.</li><li>Engagement = interacciones / alcance × 100.</li><li>ROI = (comisiones atribuidas − costes) / costes × 100.</li><li>Si falta un dato o el denominador es cero, el resultado es «—», no 0 %. El ROI global se calcula con los totales, no promediando porcentajes.</li><li>Los cambios de tasas se expresan en puntos porcentuales (pp). Las otras variaciones son relativas. Las cifras se redondean solo al mostrarlas.</li></ul><p class="mt-2">Las fotografías son ilustrativas y no identifican productos ni una persona real vinculada a estos resultados.</p></div>
+          </div>
+        </details>
+      </section>
+      <footer class="flex flex-wrap items-center justify-between gap-3 pt-5 text-[10px] text-muted"><p><span class="mr-2 text-sm font-extrabold text-white">folio<span class="text-lavender">.</span></span>Menos ruido. Más perspectiva.</p><p>Hecho para tu próxima gran idea <span class="mx-2 text-line">/</span> EUR · Datos de demostración</p></footer>
+    </main>
+  </div>
+</body>
+</html>

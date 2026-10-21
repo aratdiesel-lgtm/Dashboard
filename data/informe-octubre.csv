@@ -1,0 +1,12 @@
+tipo;nombre;periodo;plataforma;precio_eur;comision_por_venta_eur;ventas;alcance;impresiones;interacciones;costes_eur;comisiones_eur;roi_porcentaje;datos
+producto;Producto A;2026-10-01/2026-10-15;;50;7.50;420;;;;1000;3150;215.00;DEMOSTRACION
+producto;Producto B;2026-10-01/2026-10-15;;120;18;242;;;;1100;4356;296.00;DEMOSTRACION
+producto;Producto C;2026-10-01/2026-10-15;;80;12;180;;;;700;2160;208.57;DEMOSTRACION
+plataforma;Instagram;2026-10-01/2026-10-15;Instagram;;;410;620000;1240000;47120;1200;4650;287.50;DEMOSTRACION
+plataforma;TikTok;2026-10-01/2026-10-15;TikTok;;;300;460000;920000;32200;900;3510;290.00;DEMOSTRACION
+plataforma;YouTube;2026-10-01/2026-10-15;YouTube;;;132;160000;320000;5240;700;1506;115.14;DEMOSTRACION
+plataforma;Otras plataformas;2026-10-01/2026-10-15;;;;—;—;—;—;—;—;—;SIN DATOS
+campana;Rutina de otoño;2026-10-01/2026-10-15;Instagram;;;410;620000;1240000;47120;1200;4650;287.50;DEMOSTRACION
+campana;Favoritos del mes;2026-10-01/2026-10-15;TikTok;;;300;460000;920000;32200;900;3510;290.00;DEMOSTRACION
+campana;Mi selección esencial;2026-10-01/2026-10-15;YouTube;;;132;160000;320000;5240;700;1506;115.14;DEMOSTRACION
+total;Total del periodo;2026-10-01/2026-10-15;;;;842;1240000;2480000;84560;2800;9666;245.21;DEMOSTRACION - NO SUMAR DIMENSIONES ENTRE SI

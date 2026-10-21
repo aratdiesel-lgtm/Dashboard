@@ -1,41 +1,73 @@
-# HTML Hello
+# Folio · Dashboard de campañas
 
-The most basic boilerplate for any 4Geeks Academy student, start your very first website from scratch.
+Dashboard responsive de afiliación para una creadora de contenido. HTML semántico y Tailwind CSS v4 compilado localmente, sin CDN, JavaScript de aplicación ni frameworks. Todos los resultados son **datos de demostración**, no información verificada.
 
-> There is a video tutorial on [how to use this template to create your very first website here](https://youtu.be/dfbDCMu_p-0).
+## Ejecutar
 
-## What to do next?
-
-Create an `index.html` file with the [basic HTML structure](http://4geeks.com/lesson/what-is-html-learn-html#page-structure) and see it live by running a web-server using the following command:
+Requisitos: Node.js 20 o superior y npm. Python 3 es necesario solo para las pruebas y el servidor opcional.
 
 ```bash
-$ pip3 install flask && python3 server.py
+npm ci
+npm run build
 ```
 
-- You can create as many HTML files as you want.
-- You can also create CSS files and import them into your website using a `<link>` tag placed between the `<head></head>` tags, like this:
+Abre [index.html](index.html) directamente en el navegador. El CSS compilado está incluido. Para visualizarlo mediante HTTP, opcionalmente:
 
-```html
-<head>
-  ...
-  <link rel="stylesheet" type="text/css" href="styles.css">
-  ...
-</head>
+```bash
+npm start
 ```
 
-- If you want to use Tailwind CSS, add it optionally via the official Tailwind CSS v4 CDN inside the same `<head>`:
+Visita `http://localhost:3000`. Si el puerto está ocupado, usa `python3 -m http.server 3001` y abre `http://localhost:3001`. Para recompilar al editar: `npm run watch` en otra terminal.
 
-```html
-<head>
-  ...
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  <link rel="stylesheet" type="text/css" href="styles.css">
-  ...
-</head>
+## Estructura
+
+```text
+index.html                 Dashboard completo
+src/input.css              Importación v4 y tokens de diseño (@theme)
+dist/styles.css            CSS generado, listo para visualizar
+data/informe-octubre.csv   Exportación de los datos demo
+package.json               CLI de Tailwind y comandos
+package-lock.json          Versiones reproducibles
+tests/test_dashboard.py    Pruebas con la biblioteca estándar de Python
 ```
 
-### Contributors
+## Contenido
 
-This template was built as part of the [Full Stack Developer course](https://4geeksacademy.com/us/coding-bootcamps/part-time-full-stack-developer) at [4Geeks Academy Coding Bootcamp](https://4geeksacademy.com/us/coding-bootcamp) by [Alejandro Sanchez](https://twitter.com/alesanchezr) and [many other contributors](https://github.com/4GeeksAcademy/html-hello/graphs/contributors).
+- **KPIs:** comisiones, ventas, alcance, impresiones, conversión, engagement y ROI; objetivo de comisiones y variaciones frente al periodo anterior.
+- **Drivers:** evolución diaria, funnel, comparación de plataformas, ranking de productos, interacciones y actividad de publicación.
+- **Operaciones:** tablas de productos, plataformas y campañas, rankings, tres alertas y oportunidades de mejora.
 
-You can find other templates and resources like this at the [school's GitHub page](https://github.com/4geeksacademy/).
+Navegación por anclas, paneles nativos desplegables y descarga CSV funcionan sin JavaScript. El periodo y la cuenta son informativos y fijos; no se simulan conexiones, sincronización ni filtros en vivo. Las tablas conservan encabezados y desplazamiento horizontal local en móvil, sin desbordar la página. Breakpoints utilizados: `sm:`, `md:`, `lg:` y `xl:`.
+
+## Datos y cálculos
+
+Periodo: 1–15 octubre de 2026. Moneda: EUR. 842 ventas, 9.666 € de comisiones y 2.800 € de costes. Los datos se presentan estáticamente y los cálculos se verifican con las pruebas.
+
+| Producto | Precio | Comisión (15 %) | Ventas | Comisiones |
+| --- | ---: | ---: | ---: | ---: |
+| A | 50 € | 7,50 € | 420 | 3.150 € |
+| B | 120 € | 18,00 € | 242 | 4.356 € |
+| C | 80 € | 12,00 € | 180 | 2.160 € |
+
+- Comisión = precio × 15 %; total = comisión por venta × ventas.
+- Conversión = conversiones / alcance × 100.
+- Engagement = interacciones / alcance × 100.
+- ROI = (comisiones atribuidas − costes) / costes × 100.
+- Si falta un dato o el denominador es cero, se muestra «—». No se sustituye un dato ausente por cero. El ROI global usa totales ponderados, no la media de los ROI.
+- El alcance es agregado, sin deduplicación entre canales. El funnel es ilustrativo, no una secuencia de personas únicas; sus anchos no son proporcionales.
+- Cada venta se atribuye exclusivamente a una campaña/plataforma. Reparto A/B/C: Instagram 220/120/70; TikTok 140/90/70; YouTube 60/32/40.
+- Los costes son los mismos desglosados por diferentes dimensiones. No sumar productos, plataformas y campañas entre sí. El CSV lo indica en su fila total.
+- Comparativa anterior: 8.150 € de comisiones, 748 ventas, 1.144.000 de alcance, 2.230.000 impresiones, 82.368 interacciones, 2.680 € de costes y 24 publicaciones.
+- Variaciones relativas para importes y volúmenes; puntos porcentuales para tasas. Redondeo solo en presentación.
+
+Las fotografías ilustrativas proceden de Unsplash; la tipografía Manrope se sirve desde Google Fonts. Ambas necesitan conexión, pero no son necesarias para consultar los datos: existen textos alternativos y una tipografía de respaldo. Los iconos SVG están integrados y no necesitan servicios externos. No hay analítica, cookies ni llamadas a plataformas sociales.
+
+## Verificación
+
+```bash
+npm run build
+npm test
+npm audit
+```
+
+Las pruebas comprueban los cálculos, la coherencia entre dimensiones, los totales diarios, CSV, denominadores cero, datos ausentes, enlaces internos, semántica, breakpoints y ausencia de scripts o CDN de Tailwind.

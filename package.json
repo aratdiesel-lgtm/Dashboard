@@ -1,0 +1,16 @@
+{
+  "name": "folio-creator-dashboard",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Dashboard de campañas de afiliación con HTML y Tailwind CSS v4",
+  "scripts": {
+    "build": "tailwindcss -i ./src/input.css -o ./dist/styles.css --minify",
+    "watch": "tailwindcss -i ./src/input.css -o ./dist/styles.css --watch",
+    "start": "python3 -m http.server 3000 --bind 0.0.0.0",
+    "test": "python3 -m unittest discover -s tests -p 'test_*.py' -v"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.1.0",
+    "tailwindcss": "^4.1.0"
+  }
+}
